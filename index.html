@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chipz Bloxys</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #050505;
+  color: white;
+}
+
+/* HEADER */
+
+header {
+  background: #090909;
+  border-bottom: 2px solid #e00000;
+  padding: 20px;
+  text-align: center;
+}
+
+.logo {
+  color: #ff2020;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 15px red;
+  margin-bottom: 15px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav button {
+  background: #111;
+  color: white;
+  border: 1px solid #333;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+nav button:hover {
+  background: #e00000;
+  border-color: #ff3030;
+}
+
+/* HOME */
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background:
+    radial-gradient(circle, #300000, #080000 45%, #050505);
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: #ff2020;
+  text-shadow: 0 0 20px red;
+}
+
+.hero p {
+  color: #aaa;
+  font-size: 18px;
+}
+
+/* PAGES */
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.page h2 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.page-description {
+  text-align: center;
+  color: #888;
+  margin-bottom: 35px;
+}
+
+/* SEARCH */
+
+.search {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto 30px;
+
+  padding: 16px 20px;
+
+  background: #111;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 10px;
+
+  font-size: 16px;
+  outline: none;
+}
+
+.search:focus {
+  border-color: #ff2020;
+}
+
+/* GAME CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.game-card {
+  background: #101010;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  border-color: #e00000;
+  box-shadow: 0 0 20px #330000;
+}
+
+.game-icon {
+  font-size: 45px;
+  margin-bottom: 12px;
+}
+
+.game-card h3 {
+  margin-bottom: 8px;
+}
+
+.game-card p {
+  color: #777;
+}
+
+/* ITEMS */
+
+.item-card {
+  background: #101010;
+  border: 1px solid #292929;
+  border-radius: 12px;
+  padding: 22px;
+  transition: 0.2s;
+}
+
+.item-card:hover {
+  border-color: #e00000;
+  transform: translateY(-3px);
+}
+
+.item-card h3 {
+  margin-bottom: 8px;
+}
+
+.item-type {
+  color: #888;
+  margin-bottom: 15px;
+}
+
+.price {
+  color: #35e66b;
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 12px;
+
+  background: #e00000;
+  color: white;
+
+  border: none;
+  border-radius: 7px;
+
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.buy-button:hover {
+  background: #ff2020;
+}
+
+/* BACK BUTTON */
+
+.back-button {
+  display: block;
+  margin: 0 auto 25px;
+
+  padding: 11px 20px;
+
+  background: #111;
+  color: white;
+
+  border: 1px solid #333;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.back-button:hover {
+  border-color: #e00000;
+}
+
+/* HIDDEN */
+
+.hidden {
+  display: none;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  padding: 40px 20px;
+
+  background: #090909;
+  border-top: 1px solid #222;
+
+  color: #777;
+}
+
+footer strong {
+  color: #ff2020;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  .logo {
+    font-size: 30px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  nav button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+  <div class="logo">
+    CHIPZ BLOXYS
+  </div>
+
+  <nav>
+
+    <button onclick="showPage('home')">
+      🏠 Home
+    </button>
+
+    <button onclick="showPage('games')">
+      🎮 Game Items
+    </button>
+
+    <button onclick="showPage('limiteds')">
+      💎 Roblox Limiteds
+    </button>
+
+    <button onclick="showPage('clothing')">
+      👕 Roblox Clothing
+    </button>
+
+    <button onclick="showPage('marketplace')">
+      🛍️ Marketplace
+    </button>
+
+  </nav>
+
+</header>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section
+  id="home"
+  class="hero">
+
+  <h1>
+    WELCOME TO
+    <span>CHIPZ BLOXYS</span>
+  </h1>
+
+  <p>
+    Your Roblox marketplace for items,
+    limiteds, clothing and more.
+  </p>
+
+</section>
+
+
+<!-- =====================================================
+     🎮 GAME ITEMS
+===================================================== -->
+
+<section
+  id="games"
+  class="page hidden">
+
+  <h2>
+    🎮 Game Items
+  </h2>
+
+  <p class="page-description">
+    Choose a Roblox game to see the items available.
+  </p>
+
+  <input
+    id="gameSearch"
+    class="search"
+    type="text"
+    placeholder="🔎 Search for a Roblox game..."
+    oninput="searchGames()"
+  >
+
+  <div
+    id="gameList"
+    class="grid">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     GAME ITEM LIST
+===================================================== -->
+
+<section
+  id="gameItems"
+  class="page hidden">
+
+  <button
+    class="back-button"
+    onclick="showPage('games')">
+
+    ← Back To Games
+
+  </button>
+
+  <h2 id="gameTitle"></h2>
+
+  <p class="page-description">
+    Items available for this game.
+  </p>
+
+  <input
+    id="itemSearch"
+    class="search"
+    type="text"
+    placeholder="🔎 Search items..."
+    oninput="searchItems()"
+  >
+
+  <div
+    id="itemList"
+    class="grid">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     💎 LIMITEDS
+===================================================== -->
+
+<section
+  id="limiteds"
+  class="page hidden">
+
+  <h2>
+    💎 Roblox Limiteds
+  </h2>
+
+  <p class="page-description">
+    Browse limited items available for purchase.
+  </p>
+
+  <input
+    id="limitedSearch"
+    class="search"
+    type="text"
+    placeholder="🔎 Search limiteds..."
+    oninput="searchLimiteds()"
+  >
+
+  <div
+    id="limitedList"
+    class="grid">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     👕 CLOTHING
+===================================================== -->
+
+<section
+  id="clothing"
+  class="page hidden">
+
+  <h2>
+    👕 Roblox Clothing
+  </h2>
+
+  <p class="page-description">
+    Browse clothing available for purchase.
+  </p>
+
+  <input
+    id="clothingSearch"
+    class="search"
+    type="text"
+    placeholder="🔎 Search clothing..."
+    oninput="searchClothing()"
+  >
+
+  <div
+    id="clothingList"
+    class="grid">
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     🛍️ MARKETPLACE
+===================================================== -->
+
+<section
+  id="marketplace"
+  class="page hidden">
+
+  <h2>
+    🛍️ Marketplace
+  </h2>
+
+  <p class="page-description">
+    Browse everything available in the marketplace.
+  </p>
+
+  <input
+    id="marketSearch"
+    class="search"
+    type="text"
+    placeholder="🔎 Search marketplace..."
+    oninput="searchMarketplace()"
+  >
+
+  <div
+    id="marketList"
+    class="grid">
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>
+    © 2026 <strong>Chipz Bloxys</strong>
+  </p>
+
+  <p style="margin-top:8px;">
+    Follow <strong>@chipzbloxx</strong> on TikTok
+  </p>
+
+</footer>
+
+
+<script>
+
+
+/* =========================================================
+   EASY EDIT SECTION
+
+   THIS IS WHERE YOU ADD YOUR PRODUCTS.
+
+   Change the names and prices whenever you want.
+========================================================= */
+
+
+/* =========================================================
+   🎮 GAMES
+========================================================= */
+
+const games = [
+
+  {
+    name: "Murder Mystery 2",
+    icon: "🔪",
+
+    items: [
+
+      {
+        name: "Chroma Slasher",
+        type: "Knife",
+        price: 25
+      },
+
+      {
+        name: "Chroma Fang",
+        type: "Knife",
+        price: 20
+      },
+
+      {
+        name: "Chroma Luger",
+        type: "Gun",
+        price: 30
+      },
+
+      {
+        name: "Chroma Shark",
+        type: "Gun",
+        price: 22
+      },
+
+      {
+        name: "Godly Knife",
+        type: "Knife",
+        price: 15
+      },
+
+      {
+        name: "Rare Pet",
+        type: "Pet",
+        price: 10
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Adopt Me!",
+    icon: "🐾",
+
+    items: [
+
+      {
+        name: "Legendary Pet",
+        type: "Pet",
+        price: 20
+      },
+
+      {
+        name: "Rare Pet",
+        type: "Pet",
+        price: 10
+      },
+
+      {
+        name: "Ultra-Rare Pet",
+        type: "Pet",
+        price: 15
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Blox Fruits",
+    icon: "🍎",
+
+    items: [
+
+      {
+        name: "Leopard Fruit",
+        type: "Fruit",
+        price: 20
+      },
+
+      {
+        name: "Dragon Fruit",
+        type: "Fruit",
+        price: 30
+      },
+
+      {
+        name: "Kitsune Fruit",
+        type: "Fruit",
+        price: 35
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Pet Simulator 99",
+    icon: "🐶",
+
+    items: [
+
+      {
+        name: "Huge Pet",
+        type: "Pet",
+        price: 25
+      },
+
+      {
+        name: "Titanic Pet",
+        type: "Pet",
+        price: 100
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Blade Ball",
+    icon: "⚔️",
+
+    items: [
+
+      {
+        name: "Legendary Sword",
+        type: "Sword",
+        price: 20
+      },
+
+      {
+        name: "Rare Sword",
+        type: "Sword",
+        price: 10
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Da Hood",
+    icon: "🔫",
+
+    items: [
+
+      {
+        name: "Rare Weapon",
+        type: "Weapon",
+        price: 15
+      },
+
+      {
+        name: "Limited Weapon",
+        type: "Weapon",
+        price: 25
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Dress To Impress",
+    icon: "👗",
+
+    items: [
+
+      {
+        name: "Limited Outfit",
+        type: "Outfit",
+        price: 20
+      }
+
+    ]
+  },
+
+
+  {
+    name: "Brookhaven",
+    icon: "🏠",
+
+    items: [
+
+      {
+        name: "Exclusive Item",
+        type: "Item",
+        price: 10
+      }
+
+    ]
+  },
+
+
+  {
+    name: "The Strongest Battlegrounds",
+    icon: "🥊",
+
+    items: [
+
+      {
+        name: "Exclusive Item",
+        type: "Item",
+        price: 15
+      }
+
+    ]
+  }
+
+];
+
+
+/* =========================================================
+   💎 LIMITEDS
+========================================================= */
+
+const limiteds = [
+
+  {
+    name: "Red Dominus",
+    type: "Limited",
+    price: 50
+  },
+
+  {
+    name: "Black Valkyrie",
+    type: "Limited",
+    price: 45
+  },
+
+  {
+    name: "Limited Face",
+    type: "Face",
+    price: 30
+  },
+
+  {
+    name: "Limited Hat",
+    type: "Hat",
+    price: 25
+  },
+
+  {
+    name: "Rare Limited",
+    type: "Accessory",
+    price: 20
+  }
+
+];
+
+
+/* =========================================================
+   👕 CLOTHING
+========================================================= */
+
+const clothing = [
+
+  {
+    name: "Chipz Bloxys Red Hoodie",
+    type: "Shirt",
+    price: 10
+  },
+
+  {
+    name: "Chipz Bloxys Black Pants",
+    type: "Pants",
+    price: 10
+  },
+
+  {
+    name: "Red & Black Outfit",
+    type: "Outfit",
+    price: 20
+  },
+
+  {
+    name: "Chipz Bloxys T-Shirt",
+    type: "Shirt",
+    price: 8
+  },
+
+  {
+    name: "Black Gaming Pants",
+    type: "Pants",
+    price: 8
+  }
+
+];
+
+
+/* =========================================================
+   🛍️ MARKETPLACE
+========================================================= */
+
+const marketplace = [
+
+  {
+    name: "Roblox Gift Item",
+    type: "Marketplace Item",
+    price: 15
+  },
+
+  {
+    name: "Exclusive Chipz Item",
+    type: "Exclusive",
+    price: 25
+  },
+
+  {
+    name: "Special Bundle",
+    type: "Bundle",
+    price: 30
+  },
+
+  {
+    name: "Mystery Item",
+    type: "Mystery",
+    price: 10
+  }
+
+];
+
+
+/* =========================================================
+   PAGE SYSTEM
+========================================================= */
+
+function hidePages() {
+
+  document
+    .querySelectorAll(".page, .hero")
+    .forEach(page => {
+
+      page.classList.add("hidden");
+
+    });
+
+}
+
+
+function showPage(page) {
+
+  hidePages();
+
+  if (page === "home") {
+
+    document
+      .getElementById("home")
+      .classList.remove("hidden");
+
+  }
+
+
+  if (page === "games") {
+
+    document
+      .getElementById("games")
+      .classList.remove("hidden");
+
+    displayGames(games);
+
+  }
+
+
+  if (page === "limiteds") {
+
+    document
+      .getElementById("limiteds")
+      .classList.remove("hidden");
+
+    displayLimiteds(limiteds);
+
+  }
+
+
+  if (page === "clothing") {
+
+    document
+      .getElementById("clothing")
+      .classList.remove("hidden");
+
+    displayClothing(clothing);
+
+  }
+
+
+  if (page === "marketplace") {
+
+    document
+      .getElementById("marketplace")
+      .classList.remove("hidden");
+
+    displayMarketplace(marketplace);
+
+  }
+
+  window.scrollTo(0, 0);
+
+}
+
+
+/* =========================================================
+   🎮 DISPLAY GAMES
+========================================================= */
+
+function displayGames(list) {
+
+  const container =
+    document.getElementById("gameList");
+
+  container.innerHTML = "";
+
+  list.forEach(game => {
+
+    const card =
+      document.createElement("div");
+
+    card.className = "game-card";
+
+    card.innerHTML = `
+
+      <div class="game-icon">
+        ${game.icon}
+      </div>
+
+      <h3>
+        ${game.name}
+      </h3>
+
+      <p>
+        ${game.items.length} items available
+      </p>
+
+    `;
+
+    card.onclick = function() {
+
+      openGame(game);
+
+    };
+
+    container.appendChild(card);
+
+  });
+
+}
+
+
+function searchGames() {
+
+  const search =
+    document
+      .getElementById("gameSearch")
+      .value
+      .toLowerCase();
+
+  const filtered =
+    games.filter(game =>
+      game.name
+        .toLowerCase()
+        .includes(search)
+    );
+
+  displayGames(filtered);
+
+}
+
+
+/* =========================================================
+   🎮 OPEN GAME
+========================================================= */
+
+function openGame(game) {
+
+  hidePages();
+
+  document
+    .getElementById("gameItems")
+    .classList.remove("hidden");
+
+  document
+    .getElementById("gameTitle")
+    .innerText =
+      game.icon + " " + game.name;
+
+  document
+    .getElementById("itemSearch")
+    .value = "";
+
+  displayGameItems(game.items);
+
+}
+
+
+/* =========================================================
+   🎮 GAME ITEMS
+========================================================= */
+
+function displayGameItems(items) {
+
+  const container =
+    document.getElementById("itemList");
+
+  container.innerHTML = "";
+
+  items.forEach(item => {
+
+    container.appendChild(
+      createItemCard(item)
+    );
+
+  });
+
+}
+
+
+function searchItems() {
+
+  const search =
+    document
+      .getElementById("itemSearch")
+      .value
+      .toLowerCase();
+
+  const title =
+    document
+      .getElementById("gameTitle")
+      .innerText;
+
+  const game =
+    games.find(game =>
+      title.includes(game.name)
+    );
+
+  if (!game) return;
+
+  const filtered =
+    game.items.filter(item =>
+
+      item.name
+        .toLowerCase()
+        .includes(search)
+
+      ||
+
+      item.type
+        .toLowerCase()
+        .includes(search)
+
+    );
+
+  displayGameItems(filtered);
+
+}
+
+
+/* =========================================================
+   💎 LIMITEDS
+========================================================= */
+
+function displayLimiteds(list) {
+
+  const container =
+    document.getElementById("limitedList");
+
+  container.innerHTML = "";
+
+  list.forEach(item => {
+
+    container.appendChild(
+      createItemCard(item)
+    );
+
+  });
+
+}
+
+
+function searchLimiteds() {
+
+  const search =
+    document
+      .getElementById("limitedSearch")
+      .value
+      .toLowerCase();
+
+  const filtered =
+    limiteds.filter(item =>
+
+      item.name
+        .toLowerCase()
+        .includes(search)
+
+      ||
+
+      item.type
+        .toLowerCase()
+        .includes(search)
+
+    );
+
+  displayLimiteds(filtered);
+
+}
+
+
+/* =========================================================
+   👕 CLOTHING
+========================================================= */
+
+function displayClothing(list) {
+
+  const container =
+    document.getElementById("clothingList");
+
+  container.innerHTML = "";
+
+  list.forEach(item => {
+
+    container.appendChild(
+      createItemCard(item)
+    );
+
+  });
+
+}
+
+
+function searchClothing() {
+
+  const search =
+    document
+      .getElementById("clothingSearch")
+      .value
+      .toLowerCase();
+
+  const filtered =
+    clothing.filter(item =>
+
+      item.name
+        .toLowerCase()
+        .includes(search)
+
+      ||
+
+      item.type
+        .toLowerCase()
+        .includes(search)
+
+    );
+
+  displayClothing(filtered);
+
+}
+
+
+/* =========================================================
+   🛍️ MARKETPLACE
+========================================================= */
+
+function displayMarketplace(list) {
+
+  const container =
+    document.getElementById("marketList");
+
+  container.innerHTML = "";
+
+  list.forEach(item => {
+
+    container.appendChild(
+      createItemCard(item)
+    );
+
+  });
+
+}
+
+
+function searchMarketplace() {
+
+  const search =
+    document
+      .getElementById("marketSearch")
+      .value
+      .toLowerCase();
+
+  const filtered =
+    marketplace.filter(item =>
+
+      item.name
+        .toLowerCase()
+        .includes(search)
+
+      ||
+
+      item.type
+        .toLowerCase()
+        .includes(search)
+
+    );
+
+  displayMarketplace(filtered);
+
+}
+
+
+/* =========================================================
+   ITEM CARD
+========================================================= */
+
+function createItemCard(item) {
+
+  const card =
+    document.createElement("div");
+
+  card.className = "item-card";
+
+  card.innerHTML = `
+
+    <h3>
+      ${item.name}
+    </h3>
+
+    <div class="item-type">
+      ${item.type}
+    </div>
+
+    <div class="price">
+      $${item.price.toFixed(2)}
+    </div>
+
+    <button
+      class="buy-button"
+      onclick="buyItem('${item.name}', ${item.price})">
+
+      🛒 Buy
+
+    </button>
+
+  `;
+
+  return card;
+
+}
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+function buyItem(name, price) {
+
+  alert(
+    name +
+    " has been selected for $" +
+    price.toFixed(2) +
+    "."
+  );
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+window.onload = function() {
+
+  showPage("home");
+
+};
+
+</script>
+
+</body>
+</html>
