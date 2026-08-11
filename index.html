@@ -1,0 +1,1151 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chipz Bloxys</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#050505;
+    color:white;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:18px 7%;
+
+    background:#080808;
+    border-bottom:1px solid #292929;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:900;
+    letter-spacing:2px;
+}
+
+.logo span{
+    color:#e50914;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:#aaa;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#e50914;
+}
+
+.discord-top{
+    background:#5865f2;
+    padding:11px 18px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+/* HERO */
+
+.hero{
+    min-height:620px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:80px 8%;
+
+    background:
+        radial-gradient(circle at 80% 40%,#42050a,transparent 35%),
+        linear-gradient(135deg,#050505,#111);
+}
+
+.hero-text{
+    max-width:600px;
+}
+
+.small-title{
+    color:#e50914;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:4px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(55px,8vw,100px);
+    line-height:.9;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#e50914;
+}
+
+.hero p{
+    color:#999;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+}
+
+.shop-btn{
+    background:#e50914;
+    padding:15px 25px;
+    border-radius:8px;
+    font-weight:900;
+}
+
+.discord-btn{
+    background:#5865f2;
+    padding:15px 25px;
+    border-radius:8px;
+    font-weight:900;
+}
+
+.shop-btn:hover{
+    background:#ff1825;
+}
+
+.discord-btn:hover{
+    background:#4752c4;
+}
+
+/* HERO CARD */
+
+.hero-card{
+    width:330px;
+    height:420px;
+
+    border-radius:25px;
+
+    border:1px solid #333;
+
+    background:
+        linear-gradient(145deg,#171717,#080808);
+
+    box-shadow:
+        0 0 80px rgba(229,9,20,.25);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    transform:rotate(4deg);
+}
+
+.hero-card-content{
+    text-align:center;
+}
+
+.hero-card-icon{
+    font-size:110px;
+    margin-bottom:25px;
+}
+
+.hero-card h2{
+    font-size:32px;
+}
+
+.hero-card h2 span{
+    color:#e50914;
+}
+
+/* MARKETPLACE */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title small{
+    color:#e50914;
+    font-weight:900;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:55px;
+    margin-top:8px;
+}
+
+/* SEARCH */
+
+.search{
+    display:flex;
+    justify-content:center;
+    margin-bottom:35px;
+}
+
+.search input{
+    width:400px;
+    max-width:100%;
+
+    padding:15px 18px;
+
+    border-radius:9px;
+
+    border:1px solid #333;
+
+    background:#111;
+    color:white;
+
+    outline:none;
+}
+
+.search input:focus{
+    border-color:#e50914;
+}
+
+/* CATEGORIES */
+
+.categories{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:35px;
+    flex-wrap:wrap;
+}
+
+.category-btn{
+    border:1px solid #333;
+    background:#111;
+    color:white;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.category-btn:hover,
+.category-btn.active{
+    background:#e50914;
+    border-color:#e50914;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.product{
+    background:#101010;
+    border:1px solid #282828;
+    border-radius:15px;
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-7px);
+    border-color:#e50914;
+}
+
+.product-image{
+    height:220px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:90px;
+
+    background:
+        radial-gradient(circle,#3c080b,#101010 65%);
+}
+
+.product-info{
+    padding:22px;
+}
+
+.product-category{
+    color:#e50914;
+    font-size:11px;
+    font-weight:900;
+    letter-spacing:1px;
+}
+
+.product h3{
+    margin:8px 0;
+}
+
+.product-description{
+    color:#777;
+    font-size:14px;
+    line-height:1.5;
+}
+
+.product-bottom{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-top:20px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:900;
+}
+
+.buy-btn{
+    background:#e50914;
+    border:none;
+    color:white;
+
+    padding:10px 15px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-weight:900;
+}
+
+.buy-btn:hover{
+    background:#ff1825;
+}
+
+/* COMMUNITY */
+
+.community{
+    margin:0 8% 80px;
+
+    padding:55px;
+
+    border-radius:20px;
+
+    border:1px solid #3c0b0e;
+
+    background:
+        linear-gradient(100deg,#190304,#0c0c0c);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+}
+
+.community h2{
+    font-size:45px;
+}
+
+.community h2 span{
+    color:#e50914;
+}
+
+.community p{
+    color:#888;
+    margin-top:10px;
+}
+
+.community-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.tiktok{
+    background:white;
+    color:black;
+
+    padding:15px 22px;
+
+    border-radius:8px;
+
+    font-weight:900;
+}
+
+/* CART */
+
+.cart{
+    position:fixed;
+
+    right:25px;
+    bottom:25px;
+
+    width:320px;
+
+    background:#101010;
+
+    border:1px solid #333;
+
+    border-radius:15px;
+
+    padding:22px;
+
+    z-index:999;
+
+    box-shadow:0 10px 40px #000;
+}
+
+.cart h3{
+    margin-bottom:15px;
+}
+
+.cart-items{
+    max-height:180px;
+    overflow-y:auto;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+
+    padding:8px 0;
+
+    border-bottom:1px solid #222;
+
+    font-size:14px;
+}
+
+.cart-total{
+    margin-top:15px;
+
+    display:flex;
+    justify-content:space-between;
+
+    font-weight:900;
+}
+
+.checkout{
+    width:100%;
+
+    margin-top:15px;
+
+    padding:13px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:#e50914;
+
+    color:white;
+
+    font-weight:900;
+
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid #222;
+
+    padding:40px 8%;
+
+    color:#666;
+
+    text-align:center;
+}
+
+footer .logo{
+    margin-bottom:10px;
+}
+
+.disclaimer{
+    font-size:11px;
+    margin-top:15px;
+    color:#444;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    nav{
+        display:none;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:60px;
+    }
+
+    .buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .community{
+        display:block;
+        text-align:center;
+    }
+
+    .community-buttons{
+        justify-content:center;
+        margin-top:25px;
+    }
+
+    .cart{
+        width:calc(100% - 30px);
+        right:15px;
+        bottom:15px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header>
+
+    <a href="#" class="logo">
+        <span>CHIPZ</span> BLOXYS
+    </a>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#marketplace">Marketplace</a>
+        <a href="#categories">Categories</a>
+        <a href="#community">Community</a>
+    </nav>
+
+    <a
+        class="discord-top"
+        href="https://discord.gg/ZJJF9qU8j"
+        target="_blank"
+    >
+        Discord
+    </a>
+
+</header>
+
+
+<main>
+
+
+<!-- HOME -->
+
+<section id="home" class="hero">
+
+    <div class="hero-text">
+
+        <div class="small-title">
+            ROBLOX MARKETPLACE
+        </div>
+
+        <h1>
+            CHIPZ<br>
+            <span>BLOXYS</span>
+        </h1>
+
+        <p>
+            Your place for Roblox limiteds,
+            game items, clothing and more.
+            Find something cool and level up
+            your Roblox experience.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                class="shop-btn"
+                href="#marketplace"
+            >
+                SHOP NOW
+            </a>
+
+            <a
+                class="discord-btn"
+                href="https://discord.gg/ZJJF9qU8j"
+                target="_blank"
+            >
+                JOIN DISCORD
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-card">
+
+        <div class="hero-card-content">
+
+            <div class="hero-card-icon">
+                🎮
+            </div>
+
+            <h2>
+                CHIPZ
+                <span>BLOXYS</span>
+            </h2>
+
+            <p>
+                Roblox Marketplace
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- MARKETPLACE -->
+
+<section id="marketplace">
+
+    <div class="section-title">
+
+        <small>SHOP</small>
+
+        <h2>
+            Marketplace
+        </h2>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search the marketplace..."
+        >
+
+    </div>
+
+
+    <div class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterProducts('All',this)"
+        >
+            All
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('Limiteds',this)"
+        >
+            💎 Limiteds
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('Game Items',this)"
+        >
+            🎮 Game Items
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterProducts('Clothing',this)"
+        >
+            👕 Clothing
+        </button>
+
+    </div>
+
+
+    <div
+        id="products"
+        class="products"
+    ></div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section
+    id="community"
+    class="community"
+>
+
+    <div>
+
+        <div class="small-title">
+            COMMUNITY
+        </div>
+
+        <h2>
+            JOIN
+            <span>CHIPZ BLOXYS</span>
+        </h2>
+
+        <p>
+            Join the Discord for updates,
+            announcements, new items and
+            the Chipz Bloxys community.
+        </p>
+
+    </div>
+
+
+    <div class="community-buttons">
+
+        <a
+            class="discord-btn"
+            href="https://discord.gg/ZJJF9qU8j"
+            target="_blank"
+        >
+            💬 JOIN DISCORD
+        </a>
+
+        <a
+            class="tiktok"
+            href="https://www.tiktok.com/@chipzbloxx"
+            target="_blank"
+        >
+            ♪ FOLLOW @CHIPZBLOXX
+        </a>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- CART -->
+
+<div class="cart">
+
+    <h3>
+        🛒 Your Cart
+    </h3>
+
+    <div
+        id="cartItems"
+        class="cart-items"
+    >
+        Your cart is empty.
+    </div>
+
+    <div class="cart-total">
+
+        <span>Total</span>
+
+        <span id="cartTotal">
+            $0
+        </span>
+
+    </div>
+
+    <button
+        class="checkout"
+        onclick="checkout()"
+    >
+        CHECKOUT
+    </button>
+
+</div>
+
+
+<footer>
+
+    <div class="logo">
+        <span>CHIPZ</span> BLOXYS
+    </div>
+
+    <p>
+        © 2026 Chipz Bloxys
+    </p>
+
+    <p class="disclaimer">
+        Roblox is a trademark of Roblox Corporation.
+        Chipz Bloxys is not affiliated with or endorsed
+        by Roblox Corporation.
+    </p>
+
+</footer>
+
+
+<script>
+
+/* PRODUCTS */
+
+const products = [
+
+    {
+        name:"Crimson Limited",
+        category:"Limiteds",
+        icon:"💎",
+        price:25,
+        description:"A rare red-themed limited."
+    },
+
+    {
+        name:"Shadow Limited",
+        category:"Limiteds",
+        icon:"🕶️",
+        price:30,
+        description:"A dark limited made to stand out."
+    },
+
+    {
+        name:"Game Item Pack",
+        category:"Game Items",
+        icon:"🎮",
+        price:15,
+        description:"A featured pack of game items."
+    },
+
+    {
+        name:"XP Boost",
+        category:"Game Items",
+        icon:"⚡",
+        price:10,
+        description:"A community favorite game item."
+    },
+
+    {
+        name:"Chipz Hoodie",
+        category:"Clothing",
+        icon:"🧥",
+        price:12,
+        description:"Black and red Chipz Bloxys hoodie."
+    },
+
+    {
+        name:"Bloxys Shirt",
+        category:"Clothing",
+        icon:"👕",
+        price:8,
+        description:"A clean Chipz Bloxys shirt."
+    }
+
+];
+
+
+let cart = [];
+
+let currentCategory = "All";
+
+
+/* DISPLAY PRODUCTS */
+
+function displayProducts(){
+
+    const container =
+        document.getElementById("products");
+
+    const search =
+        document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase();
+
+
+    const filtered =
+        products.filter(product => {
+
+            const matchesCategory =
+                currentCategory === "All" ||
+                product.category === currentCategory;
+
+            const matchesSearch =
+                product.name
+                .toLowerCase()
+                .includes(search) ||
+
+                product.category
+                .toLowerCase()
+                .includes(search);
+
+            return matchesCategory &&
+                   matchesSearch;
+
+        });
+
+
+    container.innerHTML = "";
+
+
+    filtered.forEach(product => {
+
+        const card =
+            document.createElement("div");
+
+        card.className = "product";
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+                ${product.icon}
+            </div>
+
+            <div class="product-info">
+
+                <div class="product-category">
+                    ${product.category.toUpperCase()}
+                </div>
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+                <p class="product-description">
+                    ${product.description}
+                </p>
+
+                <div class="product-bottom">
+
+                    <div class="price">
+                        $${product.price}
+                    </div>
+
+                    <button
+                        class="buy-btn"
+                        onclick="addToCart('${product.name}')"
+                    >
+                        ADD
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+/* FILTER */
+
+function filterProducts(category,button){
+
+    currentCategory = category;
+
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+
+    button.classList.add("active");
+
+
+    displayProducts();
+
+}
+
+
+/* SEARCH */
+
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "input",
+        displayProducts
+    );
+
+
+/* ADD TO CART */
+
+function addToCart(name){
+
+    const product =
+        products.find(
+            item => item.name === name
+        );
+
+
+    cart.push(product);
+
+
+    updateCart();
+
+}
+
+
+/* UPDATE CART */
+
+function updateCart(){
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const total =
+        document.getElementById("cartTotal");
+
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML =
+            "Your cart is empty.";
+
+        total.innerHTML = "$0";
+
+        return;
+
+    }
+
+
+    cartItems.innerHTML = "";
+
+
+    let totalPrice = 0;
+
+
+    cart.forEach((item,index) => {
+
+        totalPrice += item.price;
+
+
+        const div =
+            document.createElement("div");
+
+        div.className = "cart-item";
+
+
+        div.innerHTML = `
+
+            <span>
+                ${item.name}
+            </span>
+
+            <span>
+                $${item.price}
+                <button
+                    onclick="removeFromCart(${index})"
+                    style="
+                        margin-left:5px;
+                        background:none;
+                        border:0;
+                        color:#e50914;
+                        cursor:pointer;
+                    "
+                >
+                    ×
+                </button>
+            </span>
+
+        `;
+
+
+        cartItems.appendChild(div);
+
+    });
+
+
+    total.innerHTML =
+        "$" + totalPrice;
+
+}
+
+
+/* REMOVE */
+
+function removeFromCart(index){
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+
+/* CHECKOUT */
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert(
+            "Your cart is empty!"
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Checkout is not connected yet. Join the Chipz Bloxys Discord to complete your purchase!"
+    );
+
+
+    window.open(
+        "https://discord.gg/ZJJF9qU8j",
+        "_blank"
+    );
+
+}
+
+
+/* START */
+
+displayProducts();
+
+</script>
+
+
+</body>
+</html>
+```
