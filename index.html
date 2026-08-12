@@ -1,0 +1,605 @@
+const gameItems = {
+
+    "Murder Mystery 2":[
+
+        /* =========================
+           🔥 GODLYS
+        ========================= */
+
+        {
+            name:"Luger",
+            icon:"🔫",
+            price:48,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Tides",
+            icon:"🌊",
+            price:42,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Heat",
+            icon:"🔥",
+            price:40,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Shark",
+            icon:"🦈",
+            price:42,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Slasher",
+            icon:"🗡️",
+            price:44,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Laser",
+            icon:"🔴",
+            price:43,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Deathshard",
+            icon:"💀",
+            price:38,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Seer",
+            icon:"👁️",
+            price:30,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Gemstone",
+            icon:"💎",
+            price:35,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Fang",
+            icon:"🦷",
+            price:45,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Saw",
+            icon:"⚙️",
+            price:40,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Lightbringer",
+            icon:"✨",
+            price:50,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Darkbringer",
+            icon:"🌑",
+            price:52,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Clockwork",
+            icon:"⏰",
+            price:36,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Pixel",
+            icon:"🟪",
+            price:34,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Red Luger",
+            icon:"🔴",
+            price:55,
+            description:"Godly MM2 gun."
+        },
+
+        {
+            name:"Gingerblade",
+            icon:"🍪",
+            price:32,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Cookieblade",
+            icon:"🍪",
+            price:28,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Prismatic",
+            icon:"🌈",
+            price:25,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Bioblade",
+            icon:"🧬",
+            price:22,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Eternal",
+            icon:"⚔️",
+            price:37,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Eternal II",
+            icon:"⚔️",
+            price:39,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Eternal III",
+            icon:"⚔️",
+            price:41,
+            description:"Godly MM2 knife."
+        },
+
+        {
+            name:"Eternal IV",
+            icon:"⚔️",
+            price:43,
+            description:"Godly MM2 knife."
+        },
+
+
+        /* =========================
+           🌈 CHROMA GODLYS
+        ========================= */
+
+        {
+            name:"Chroma Luger",
+            icon:"🌈",
+            price:78,
+            description:"Chroma Godly MM2 gun."
+        },
+
+        {
+            name:"Chroma Fang",
+            icon:"🌈",
+            price:72,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Shark",
+            icon:"🌈",
+            price:68,
+            description:"Chroma Godly MM2 gun."
+        },
+
+        {
+            name:"Chroma Heat",
+            icon:"🌈",
+            price:65,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Tides",
+            icon:"🌈",
+            price:64,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Slasher",
+            icon:"🌈",
+            price:63,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Laser",
+            icon:"🌈",
+            price:66,
+            description:"Chroma Godly MM2 gun."
+        },
+
+        {
+            name:"Chroma Saw",
+            icon:"🌈",
+            price:60,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Deathshard",
+            icon:"🌈",
+            price:58,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Seer",
+            icon:"🌈",
+            price:45,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Gemstone",
+            icon:"🌈",
+            price:55,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Boneblade",
+            icon:"🌈",
+            price:52,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Gingerblade",
+            icon:"🌈",
+            price:50,
+            description:"Chroma Godly MM2 knife."
+        },
+
+        {
+            name:"Chroma Darkbringer",
+            icon:"🌈",
+            price:75,
+            description:"Chroma Godly MM2 gun."
+        },
+
+        {
+            name:"Chroma Lightbringer",
+            icon:"🌈",
+            price:75,
+            description:"Chroma Godly MM2 gun."
+        },
+
+
+        /* =========================
+           ⭐ ANCIENTS
+        ========================= */
+
+        {
+            name:"Icebreaker",
+            icon:"❄️",
+            price:35,
+            description:"Ancient MM2 knife."
+        },
+
+        {
+            name:"Icewing",
+            icon:"❄️",
+            price:30,
+            description:"Ancient MM2 knife."
+        },
+
+        {
+            name:"Batwing",
+            icon:"🦇",
+            price:34,
+            description:"Ancient MM2 knife."
+        },
+
+        {
+            name:"Hallowscythe",
+            icon:"☠️",
+            price:36,
+            description:"Ancient MM2 knife."
+        },
+
+        {
+            name:"Logchopper",
+            icon:"🪓",
+            price:33,
+            description:"Ancient MM2 knife."
+        },
+
+        {
+            name:"Elderwood Scythe",
+            icon:"🌲",
+            price:37,
+            description:"Ancient MM2 knife."
+        },
+
+
+        /* =========================
+           💎 VINTAGE
+        ========================= */
+
+        {
+            name:"America",
+            icon:"🇺🇸",
+            price:28,
+            description:"Vintage MM2 gun."
+        },
+
+        {
+            name:"Blood",
+            icon:"🔴",
+            price:27,
+            description:"Vintage MM2 knife."
+        },
+
+        {
+            name:"Ghost",
+            icon:"👻",
+            price:26,
+            description:"Vintage MM2 knife."
+        },
+
+        {
+            name:"Golden",
+            icon:"🟡",
+            price:29,
+            description:"Vintage MM2 gun."
+        },
+
+        {
+            name:"Laser Vintage",
+            icon:"🔴",
+            price:25,
+            description:"Vintage MM2 gun."
+        },
+
+
+        /* =========================
+           🟣 LEGENDARY
+        ========================= */
+
+        {
+            name:"Nightblade",
+            icon:"🌙",
+            price:20,
+            description:"Legendary MM2 knife."
+        },
+
+        {
+            name:"Ghostblade",
+            icon:"👻",
+            price:19,
+            description:"Legendary MM2 knife."
+        },
+
+        {
+            name:"Pumpking",
+            icon:"🎃",
+            price:18,
+            description:"Legendary MM2 knife."
+        },
+
+        {
+            name:"Frostsaber",
+            icon:"❄️",
+            price:17,
+            description:"Legendary MM2 knife."
+        },
+
+        {
+            name:"Chill",
+            icon:"❄️",
+            price:16,
+            description:"Legendary MM2 knife."
+        },
+
+        {
+            name:"Red Seer",
+            icon:"🔴",
+            price:15,
+            description:"Legendary MM2 item."
+        },
+
+
+        /* =========================
+           🔵 RARE
+        ========================= */
+
+        {
+            name:"Xbox",
+            icon:"🟢",
+            price:10,
+            description:"Rare MM2 knife."
+        },
+
+        {
+            name:"Universe",
+            icon:"🌌",
+            price:10,
+            description:"Rare MM2 knife."
+        },
+
+        {
+            name:"Skool",
+            icon:"🏫",
+            price:9,
+            description:"Rare MM2 knife."
+        },
+
+        {
+            name:"Predator",
+            icon:"🐯",
+            price:9,
+            description:"Rare MM2 knife."
+        },
+
+        {
+            name:"Squire",
+            icon:"⚔️",
+            price:8,
+            description:"Rare MM2 knife."
+        },
+
+
+        /* =========================
+           🟢 UNCOMMON
+        ========================= */
+
+        {
+            name:"Green Fire",
+            icon:"🟢",
+            price:6,
+            description:"Uncommon MM2 knife."
+        },
+
+        {
+            name:"Lovely",
+            icon:"💗",
+            price:6,
+            description:"Uncommon MM2 knife."
+        },
+
+        {
+            name:"Ice",
+            icon:"🧊",
+            price:5,
+            description:"Uncommon MM2 knife."
+        },
+
+        {
+            name:"Splatter",
+            icon:"🎨",
+            price:5,
+            description:"Uncommon MM2 knife."
+        },
+
+        {
+            name:"Checker",
+            icon:"⬛",
+            price:4,
+            description:"Uncommon MM2 knife."
+        },
+
+
+        /* =========================
+           ⚪ COMMON
+        ========================= */
+
+        {
+            name:"Default Knife",
+            icon:"🔪",
+            price:1,
+            description:"Common MM2 knife."
+        },
+
+        {
+            name:"Default Gun",
+            icon:"🔫",
+            price:1,
+            description:"Common MM2 gun."
+        },
+
+        {
+            name:"Whiteout",
+            icon:"⚪",
+            price:2,
+            description:"Common MM2 knife."
+        },
+
+        {
+            name:"Blue Knife",
+            icon:"🔵",
+            price:2,
+            description:"Common MM2 knife."
+        },
+
+        {
+            name:"Red Knife",
+            icon:"🔴",
+            price:2,
+            description:"Common MM2 knife."
+        }
+
+    ],
+
+
+    /* =========================
+       KEEP THESE UNCHANGED
+    ========================= */
+
+    "Adopt Me":[
+
+        {
+            name:"Pet Pack",
+            icon:"🐶",
+            price:15,
+            description:
+                "A featured Adopt Me-style pet pack."
+        },
+
+        {
+            name:"Rare Pet",
+            icon:"🐉",
+            price:25,
+            description:
+                "A rare pet-style collectible."
+        },
+
+        {
+            name:"Pet Accessory",
+            icon:"🎀",
+            price:10,
+            description:
+                "A fun accessory-style item."
+        }
+
+    ],
+
+
+    "Blox Fruits":[
+
+        {
+            name:"Fruit Pack",
+            icon:"🍎",
+            price:20,
+            description:
+                "A featured Blox Fruits-style pack."
+        },
+
+        {
+            name:"Rare Fruit",
+            icon:"🍊",
+            price:30,
+            description:
+                "A rare fruit-style collectible."
+        },
+
+        {
+            name:"Sword Pack",
+            icon:"⚔️",
+            price:25,
+            description:
+                "A sword-style game item pack."
+        }
+
+    ]
+
+};
